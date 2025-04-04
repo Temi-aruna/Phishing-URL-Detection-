@@ -21,7 +21,7 @@ My goal with this project is to develop a machine learning model for detecting p
 
 ## Steps
 
-# Step 1: Problem Definition & Objectives | Data Preprocessing 
+# Step 1: Problem Definition & Objectives 
 Phishing is one of the most common forms of cyberattacks, and having a system that can automatically detect malicious URLs can help users reduce the risk of compromise at the endpoint and network levels.
 
 For this first step, I wanted to:
@@ -53,3 +53,13 @@ From this, I had a distribution of about 57% phishing and 43% legitimate. The cl
 From here, I decided to visualize the data using seaborn and matplotlib, just for better communication and data storytelling:
 
 ![Step 1](https://i.imgur.com/qUbQlka.png)
+
+### Step 2: Data Preprocessing
+
+### Step 3: Model Training & Evaluation 
+
+### Step 4: Analyze Performance
+
+### Step 5: Feature Importance for Explainability
+
+### Summary 
