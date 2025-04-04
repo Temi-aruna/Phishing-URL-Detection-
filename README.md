@@ -41,5 +41,15 @@ Missing data can often break ML models, skew results and cause errors during pre
 Checking for all the data types in the dataset was also very important, as the wrong data types could cause errors during training:
 
 ![Step 1](https://i.imgur.com/vj76HzG.png)
+
 Both of these steps are basically like checking our ingredients before cooking, we wouldn't want spoiled milk or mislabeled spices in the mix.
 
+From here, I wanted to understand how **balanced** my dataset was, and to see if there was a possible binary classification problem, which would help me further in prepping my model. To do this, I did a class distribution first to get a count of phishing vs. legitimate entries, with 1 being phishing URLs and 0 being legitimate URLs:
+
+![Step 1](https://i.imgur.com/0DDC4Sm.png)
+
+From this, I had a distribution of about 57% phishing and 43% legitimate. The classes were not perfectly balanced, but the difference thankfully wasn't extreme. I just had to keep that imbalance in mind in the next few steps to ensure my training and test sets maintained the same ratio.
+
+From here, I decided to visualize the data using seaborn and matplotlib, just for better communication and data storytelling:
+
+![Step 1](https://i.imgur.com/qUbQlka.png)
