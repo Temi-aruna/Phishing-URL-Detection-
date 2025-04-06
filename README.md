@@ -55,8 +55,25 @@ From here, I decided to visualize the data using seaborn and matplotlib, just fo
 ![Step 1](https://i.imgur.com/qUbQlka.png)
 
 ### Step 2: Data Preprocessing
+In continuing with our data preprocessing in order to prevent any hiccups with our ML model, I wanted to remove any possible duplicates in the data, and from our results we thankfully didn't find any:
 
-### Step 3: Model Training & Evaluation 
+![Step 2](https://i.imgur.com/pG7Imhk.png)
+
+Machine learning models learn to map patterns from X to y, so the next step was to extract all features and also extract the target variable, that way I could later feed X into model training, and compare predictions to the true y, while also using clean scikit-learn principles.
+
+After that, I wanted to split the dataset into a training set and a test set, with the training set being used to train the model, and the test set being held out for fair evaluation. This ensured I would be able to evaluate the model on unseen data to measure real-world performance, and prevent it from memorizing the dataset and failing to function on new URLs.
+
+![Step 2](https://i.imgur.com/DivjeOP.png)
+
+Now I have 188k rows to train the model and 47k rows to evaluate how well it generalizes.
+
+### Step 3: Feature Engineering 
+For our feature engineering step, I first wanted to review what current features might already be present in the dataset:
+
+![Step 2](https://i.imgur.com/xM5Crca.png)
+
+
+### Step 4: Model Training & Evaluation 
 
 ### Step 4: Analyze Performance
 
