@@ -68,13 +68,24 @@ After that, I wanted to split the dataset into a training set and a test set, wi
 Now I have 188k rows to train the model and 47k rows to evaluate how well it generalizes.
 
 ### Step 3: Feature Engineering 
-For our feature engineering step, I first wanted to review what current features might already be present in the dataset:
+For my feature engineering step, I first wanted to review what current features might already be present in the dataset:
 
-![Step 2](https://i.imgur.com/xM5Crca.png)
+![Step 3](https://i.imgur.com/xM5Crca.png)
+
+Thankfully, my dataset has already been richly feature-engineered, as it includes:
+- Behavior Indicators (redirects, popups)
+- Structural URL features (length, characters)
+- Semantic flags (Bank, Pay, Crypto keywords)
+
+My next step was to then drop any non-predictive or non-numerical columns, as well as check for any object-type columns that may need encoding:
+
+![Step 3](https://i.imgur.com/SvqLVPf.png)
+
+My code returned an empty series, which means:
+
+
 
 ### Step 4: Model Training & Evaluation 
-
-
 
 ### Step 4: Analyze Performance
 
