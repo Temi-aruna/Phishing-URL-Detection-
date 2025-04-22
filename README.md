@@ -82,13 +82,37 @@ My next step was to then drop any non-predictive or non-numerical columns, as we
 ![Step 3](https://i.imgur.com/SvqLVPf.png)
 
 My code returned an empty series, which means:
+- All remaining features in X_train are already numeric
+- My datset is now fully model-ready, as I don't need to do any encoding
 
-
+From here, I can now move into model training, starting with Random Forest for ease of access and quick runtime.
 
 ### Step 4: Model Training & Evaluation 
 
-### Step 4: Analyze Performance
+I started by training a random forest classifier, emphasizing the following metrics:
+- Confusion Matrix: to show counts of true/false positives & negatives.
+- Classification Report: to give me precision, recall, f1-score for both classes (phishing vs legit)
+- ROC-AUC Score: to measure how well the model separates the classes.
 
-### Step 5: Feature Importance for Explainability
+![Step 4](https://i.imgur.com/emSHIJt.png)
+
+The model results are essentially perfect, with accurancy, precision, recall, and F-1 score all being at a 100%, with our ROC-AUC score showcasing an anamzing value of 1.0. All 20,189 legitimate URLs were correctly classified, and all 26,879 phishing URLs were correctly classified. 
+
+Usually a 100% score can be considered _too_ perfect, and might indicate data leakage, but since I previously dropped any features that could have led to any leaks in the previous steps, I can conclude that my dataset is extremely good at distinguishing phishing from legitimate URLs using extracted features.
+
+Just to make sure however, I decided to additionally test the dataset once again using XGBoost:
+
+![Step 4](https://i.imgur.com/nnA61Fm.png)
+
+XGBoost is considered a much more powerful and flexible model than Random Forest, so it's a surprise that I obtained a perfect score again, with the same confusion matrix as well. This confirms that the features in my dataset are very strong and well-isolated, without needing any deep hyperparameter tuning. It also confirms that I have no data leakage as mentioned earlier.
+
+The next step was to run cross-validation, to see if the model would hold up across multiple data splits:
+
+![Step 4](https://i.imgur.com/uz37m9u.png)
+
+With this, I've essentially triple-confirmed that the model performs equally well across all data splits, and would likely perform well on real-world URLs. We are now ready to deploy.
+
+### Step 4: Model Deployment using Streamlit
+
 
 ### Summary 
